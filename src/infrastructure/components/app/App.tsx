@@ -1,4 +1,3 @@
-import { RobotList } from "../../../features/robots/components/robot.list/robot.list";
 import { RobotContextProvider } from "../../context/provider";
 import { Layout } from "../layout/layout";
 
@@ -7,7 +6,7 @@ export function App() {
         <div className="App">
             <Layout>
                 <RobotContextProvider>
-                    <RobotList />
+                    <p>Estamos trabajando para mejorar la experiencia</p>
                 </RobotContextProvider>
             </Layout>
         </div>
