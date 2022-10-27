@@ -8,7 +8,7 @@ export function RobotItem({ item }: { item: Robot }) {
 
     const handleClick = () => {
         handlerEraser(item.id);
-        console.log("No se ve pero esta borrado" + item.id + robot);
+        console.log("Eliminado" + item.id + robot);
     };
 
     return (
