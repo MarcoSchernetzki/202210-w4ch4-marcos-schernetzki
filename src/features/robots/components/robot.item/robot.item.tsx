@@ -1,16 +1,15 @@
+import { useContext } from "react";
+import { RobotContext } from "../../../../infrastructure/context/context";
 import { Robot } from "../../models/robot";
 import styles from "./robot.item.module.css";
 
 export function RobotItem({ item }: { item: Robot }) {
-    // const { handlerEraser, handlerComplete } = useContext(TodoContext);
+    const { handlerEraser, robot } = useContext(RobotContext);
 
-    // const handleClick = () => {
-    //     handlerEraser(item.id);
-    // };
-
-    // const handleChange = () => {
-    //     handlerComplete(item);
-    // };
+    const handleClick = () => {
+        handlerEraser(item.id);
+        console.log("No se ve pero esta borrado" + item.id + robot);
+    };
 
     return (
         <li className={styles.host}>
@@ -22,7 +21,9 @@ export function RobotItem({ item }: { item: Robot }) {
                 <span>Velocidad: {item.speed}</span>
                 <span>Resistencia: {item.endurance}</span>
                 <span>Fecha de nacimiento: {item.date}</span>
-                <span className="button">🗑️</span>
+                <span className={styles.button} onClick={() => handleClick()}>
+                    🗑️
+                </span>
             </div>
         </li>
     );
